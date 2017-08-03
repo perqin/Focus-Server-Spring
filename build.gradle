@@ -8,21 +8,35 @@ buildscript {
     }
 }
 
+plugins {
+    id('io.spring.dependency-management') version('1.0.3.RELEASE')
+}
+
 group 'com.perqin'
 version '1.0.0'
 
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.data:spring-data-releasetrain:Ingalls-SR6'
+    }
+}
 
 sourceCompatibility = 1.8
 
 repositories {
     jcenter()
+    maven { url 'https://repo.spring.io/libs-release' }
 }
 
 dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
+    compile 'org.springframework.data:spring-data-jpa:1.11.6.RELEASE'
+    compile 'org.springframework.data:spring-data-rest-webmvc:2.6.6.RELEASE'
     compile 'org.springframework.security:spring-security-config:4.2.3.RELEASE'
     compile 'org.springframework.security:spring-security-web:4.2.3.RELEASE'
     compile 'org.springframework:spring-webmvc:4.3.10.RELEASE'
