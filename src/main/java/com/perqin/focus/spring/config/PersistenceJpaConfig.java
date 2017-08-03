@@ -1,5 +1,6 @@
 package com.perqin.focus.spring.config;
 
+import com.mysql.jdbc.Driver;
 import com.perqin.focus.spring.domain.repositories.RepositoryScanned;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ public class PersistenceJpaConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(null);
+        dataSource.setDriverClassName(Driver.class.getName());
         dataSource.setUsername("perqin");
         dataSource.setPassword("dev123456");
         dataSource.setUrl("jdbc:mysql://localhost:3306/focus_spring");
