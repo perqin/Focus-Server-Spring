@@ -8,5 +8,6 @@
     <context:annotation-config/>
 
     <bean name="securityConfig" class="com.perqin.focus.spring.config.SecurityConfig"/>
+    <bean name="persistenceJpsConfig" class="com.perqin.focus.spring.config.PersistenceJpaConfig"/>
 
 </beans>
