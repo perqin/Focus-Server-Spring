@@ -1,6 +1,7 @@
 package com.perqin.focus.spring.web.initializers;
 
 import com.perqin.focus.spring.config.ApiServletConfig;
+import com.perqin.focus.spring.config.PersistenceJpaConfig;
 import com.perqin.focus.spring.config.SecurityConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -18,6 +19,7 @@ public class WebInitializer implements WebApplicationInitializer {
 
         applicationContext.register(SecurityConfig.class);
         applicationContext.register(ApiServletConfig.class);
+        applicationContext.register(PersistenceJpaConfig.class);
 
         servletContext.addListener(new ContextLoaderListener(applicationContext));
 
