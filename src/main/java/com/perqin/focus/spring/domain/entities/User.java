@@ -1,4 +1,4 @@
-package com.perqin.focus.spring.domain.models;
+package com.perqin.focus.spring.domain.entities;
 
 import lombok.Data;
 

@@ -1,8 +1,7 @@
 package com.perqin.focus.spring.web.controllers;
 
-import com.perqin.focus.spring.domain.models.User;
+import com.perqin.focus.spring.domain.entities.User;
 import com.perqin.focus.spring.domain.repositories.UsersRepository;
-import com.perqin.focus.spring.domain.services.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,12 +11,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UsersController {
-    private final UsersRepository usersRepository;
-
     @Autowired
-    public UsersController(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
-    }
+    private UsersRepository usersRepository;
+
+//    public UsersController(UsersRepository usersRepository) {
+//        this.usersRepository = usersRepository;
+//    }
 
     @GetMapping
     public List<User> findAll() {
