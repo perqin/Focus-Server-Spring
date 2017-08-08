@@ -1,5 +1,6 @@
 package com.perqin.focus.spring.web.initializers;
 
+import ch.qos.logback.ext.spring.web.LogbackConfigListener;
 import com.perqin.focus.spring.config.ApiServletConfig;
 import com.perqin.focus.spring.config.PersistenceJpaConfig;
 import com.perqin.focus.spring.config.SecurityConfig;
@@ -15,6 +16,10 @@ import javax.servlet.ServletRegistration;
 public class WebInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
+        // Add Logback config before ContextLoaderListener
+        servletContext.addListener(LogbackConfigListener.class);
+        servletContext.setInitParameter("logbackConfigLocation", "/WEB-INF/logback-spring.xml");
+
         AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext();
 
         applicationContext.register(SecurityConfig.class);

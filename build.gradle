@@ -21,6 +21,12 @@ apply plugin: 'war'
 apply plugin: 'org.akhikhl.gretty'
 apply plugin: 'io.spring.dependency-management'
 
+gretty {
+    jvmArgs = [
+            '-Dspring.profiles.active=development'
+    ]
+}
+
 dependencyManagement {
     imports {
         mavenBom 'org.springframework.data:spring-data-releasetrain:Ingalls-SR6'
@@ -35,10 +41,11 @@ repositories {
 }
 
 dependencies {
+    compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
     compile 'mysql:mysql-connector-java:8.0.7-dmr'
     compile 'org.hibernate:hibernate-core:5.2.10.Final'
-    compile 'org.slf4j:slf4j-simple:1.7.25'
+    compile 'org.logback-extensions:logback-ext-spring:0.1.4'
     compile 'org.springframework.data:spring-data-jpa:1.11.6.RELEASE'
     compile 'org.springframework.data:spring-data-rest-webmvc:2.6.6.RELEASE'
     compile 'org.springframework.security:spring-security-config:4.2.3.RELEASE'
