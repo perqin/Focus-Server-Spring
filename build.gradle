@@ -30,7 +30,6 @@ gretty {
 dependencyManagement {
     imports {
         mavenBom 'io.spring.platform:platform-bom:Athens-SR6'
-//        mavenBom 'org.springframework.data:spring-data-releasetrain:Ingalls-SR6'
     }
 }
 
