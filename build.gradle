@@ -25,15 +25,17 @@ gretty {
     jvmArgs = [
             '-Dspring.profiles.active=development'
     ]
+    servletContainer = 'jetty9.4'
 }
 
 dependencyManagement {
     imports {
-        mavenBom 'io.spring.platform:platform-bom:Athens-SR6'
+        mavenBom 'io.spring.platform:platform-bom:Brussels-SR4'
     }
 }
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     jcenter()
