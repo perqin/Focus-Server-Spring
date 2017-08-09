@@ -24,6 +24,8 @@ hs_err_pid*
 
 # IntelliJ IDEA configuration directory (as this project is Gradle based)
 /.idea
+/build
 
 # Gradle Wrapper
+/.gradle
 !/gradle/wrapper/gradle-wrapper.jar
