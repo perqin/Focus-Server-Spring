@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <appender name="consoleAppender" class="ch.qos.logback.ext.spring.DelegatingLogbackAppender"/>
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="consoleAppender"/>
     </root>
-    <!--
     <springProfile name="development">
-        <root level="INFO">
+        <root level="DEBUG">
             <appender-ref ref="consoleAppender"/>
         </root>
     </springProfile>
-    -->
 </configuration>
