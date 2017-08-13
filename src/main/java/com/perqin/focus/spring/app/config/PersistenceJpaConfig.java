@@ -1,7 +1,7 @@
 package com.perqin.focus.spring.app.config;
 
 import com.mysql.jdbc.Driver;
-import com.perqin.focus.spring.service.entities.EntityScanned;
+import com.perqin.focus.spring.repository.entities.EntityScanned;
 import com.perqin.focus.spring.repository.repositories.RepositoryScanned;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -2,7 +2,7 @@ package com.perqin.focus.spring.web.controllers;
 
 import com.perqin.focus.spring.app.utils.exceptions.ResourcesNotFoundException;
 import com.perqin.focus.spring.repository.repositories.UsersRepository;
-import com.perqin.focus.spring.service.entities.User;
+import com.perqin.focus.spring.repository.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

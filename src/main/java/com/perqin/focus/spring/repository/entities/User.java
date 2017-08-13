@@ -1,4 +1,4 @@
-package com.perqin.focus.spring.service.entities;
+package com.perqin.focus.spring.repository.entities;
 
 import lombok.Data;
 
@@ -15,12 +15,4 @@ public class User {
     private String username;
     private String password;
     private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
