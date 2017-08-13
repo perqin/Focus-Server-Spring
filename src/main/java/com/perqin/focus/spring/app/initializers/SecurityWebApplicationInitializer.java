@@ -1,4 +1,4 @@
-package com.perqin.focus.spring.web.initializers;
+package com.perqin.focus.spring.app.initializers;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

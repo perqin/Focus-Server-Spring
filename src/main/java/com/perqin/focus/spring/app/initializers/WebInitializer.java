@@ -1,10 +1,10 @@
-package com.perqin.focus.spring.web.initializers;
+package com.perqin.focus.spring.app.initializers;
 
 import ch.qos.logback.ext.spring.web.LogbackConfigListener;
-import com.perqin.focus.spring.config.ApiServletConfig;
-import com.perqin.focus.spring.config.LogbackConfig;
-import com.perqin.focus.spring.config.PersistenceJpaConfig;
-import com.perqin.focus.spring.config.SecurityConfig;
+import com.perqin.focus.spring.app.config.ApiServletConfig;
+import com.perqin.focus.spring.app.config.LogbackConfig;
+import com.perqin.focus.spring.app.config.PersistenceJpaConfig;
+import com.perqin.focus.spring.app.config.SecurityConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

@@ -1,4 +1,4 @@
-package com.perqin.focus.spring.config;
+package com.perqin.focus.spring.app.config;
 
 import com.perqin.focus.spring.security.JWTAuthenticationFilter;
 import com.perqin.focus.spring.security.JwtLoginFilter;

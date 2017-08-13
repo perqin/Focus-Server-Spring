@@ -1,4 +1,4 @@
-package com.perqin.focus.spring.config;
+package com.perqin.focus.spring.app.config;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
@@ -28,6 +28,8 @@ public class LogbackConfig {
         return encoder;
     }
 
+    // FIXME: Fix unchecked warning
+    @SuppressWarnings("unchecked")
     @Bean(initMethod = "start", destroyMethod = "stop")
     public static ConsoleAppender consoleAppender(LoggerContext ctx, PatternLayoutEncoder encoder) {
         ConsoleAppender appender = new ConsoleAppender();
