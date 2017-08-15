@@ -1,46 +1,41 @@
 package com.perqin.focus.spring.web.controllers;
 
 import com.perqin.focus.spring.app.utils.exceptions.ResourcesNotFoundException;
-import com.perqin.focus.spring.repository.repositories.UsersRepository;
 import com.perqin.focus.spring.repository.entities.User;
+import com.perqin.focus.spring.service.UsersCrudService;
+import com.perqin.focus.spring.web.dtos.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
 @RequestMapping("/users")
 public class UsersController {
-    private final UsersRepository usersRepository;
+    private final UsersCrudService usersCrudService;
 
     @Autowired
-    public UsersController(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
+    public UsersController(UsersCrudService usersCrudService) {
+        this.usersCrudService = usersCrudService;
     }
 
     @GetMapping
     public List<User> findAll() {
-        Iterable<User> all = usersRepository.findAll();
-        List<User> users = new ArrayList<>();
-        all.forEach(users::add);
-        return users;
+        return Collections.emptyList();
     }
 
     @GetMapping("/{id}")
     public User findUserById(@PathVariable("id") Long id) throws Exception {
-        return usersRepository.findOne(id).orElseThrow(ResourcesNotFoundException::new);
+        throw new ResourcesNotFoundException();
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return usersRepository.save(user);
+    public UserDto createUser(@RequestBody UserDto user) {
+        return usersCrudService.create(user);
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable("id") Long id) {
-        User user = new User();
-        user.setId(id);
-        usersRepository.delete(user);
     }
 }

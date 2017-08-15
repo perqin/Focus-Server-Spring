@@ -1,10 +1,7 @@
 package com.perqin.focus.spring.app.initializers;
 
 import ch.qos.logback.ext.spring.web.LogbackConfigListener;
-import com.perqin.focus.spring.app.config.ApiServletConfig;
-import com.perqin.focus.spring.app.config.LogbackConfig;
-import com.perqin.focus.spring.app.config.PersistenceJpaConfig;
-import com.perqin.focus.spring.app.config.SecurityConfig;
+import com.perqin.focus.spring.app.config.*;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -27,6 +24,7 @@ public class WebInitializer implements WebApplicationInitializer {
         applicationContext.register(ApiServletConfig.class);
         applicationContext.register(PersistenceJpaConfig.class);
         applicationContext.register(LogbackConfig.class);
+        applicationContext.register(ServicesConfig.class);
 
         servletContext.addListener(new ContextLoaderListener(applicationContext));
 
