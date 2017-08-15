@@ -1,4 +1,4 @@
-package com.perqin.focus.spring.security;
+package com.perqin.focus.spring.app.security;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

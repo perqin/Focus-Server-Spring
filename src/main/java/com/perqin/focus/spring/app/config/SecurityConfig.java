@@ -1,7 +1,7 @@
 package com.perqin.focus.spring.app.config;
 
-import com.perqin.focus.spring.security.JWTAuthenticationFilter;
-import com.perqin.focus.spring.security.JwtLoginFilter;
+import com.perqin.focus.spring.app.security.JWTAuthenticationFilter;
+import com.perqin.focus.spring.app.security.JwtLoginFilter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
