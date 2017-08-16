@@ -1,18 +1,12 @@
 package com.perqin.focus.spring.app.initializers;
 
-import com.perqin.focus.spring.app.config.*;
+import com.perqin.focus.spring.app.config.ConfigurationsScanned;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{
-                SecurityConfig.class,
-                ApiServletConfig.class,
-                PersistenceJpaConfig.class,
-                LogbackConfig.class,
-                ServicesConfig.class
-        };
+        return new Class[]{ ConfigurationsScanned.class };
     }
 
     @Override
@@ -22,9 +16,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{
-                "/api/*"
-        };
+        return new String[]{ "/api/*" };
     }
 
     @Override
